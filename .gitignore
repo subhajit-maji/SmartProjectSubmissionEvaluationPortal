@@ -1,0 +1,12 @@
+/config/database.php
+/config/database.infinityfree.php
+/config/mail.php
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+/storage/logs/*
+/.env
+/.env.*
+!/.env.example
+/vendor/
+.DS_Store
+Thumbs.db
