@@ -15,7 +15,7 @@ The database has four tables: `users`, `projects`, `submissions`, and `feedback`
 
 ## Project structure
 
-- `public/index.php` is the web entry point. The web server should use `public/` as its document root.
+- `public/index.php` is the web entry point. The web server should use `public/` as its document root. For Apache hosting that cannot change the document root, the root `.htaccess` forwards requests into `public/`.
 - `app/bootstrap.php` loads the database connection and shared security and upload helpers.
 - `app/actions.php` handles sign-in, account creation, proposals, report submissions, reviews, and downloads.
 - `app/views.php` renders the sign-in page and role-specific dashboards.

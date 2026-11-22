@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Keep the project root out of the web-facing paths when the hosting panel
+# cannot set public/ as the document root.
+RewriteRule ^public/ - [L]
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^(.+)$ public/$1 [L]
