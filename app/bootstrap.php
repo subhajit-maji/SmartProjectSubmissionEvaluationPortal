@@ -9,7 +9,7 @@ if (!is_file($configFile)) {
 
 $config = require $configFile;
 define('APP_NAME', 'Smart Project Submission & Evaluation Portal');
-define('MAX_UPLOAD_BYTES', 5 * 1024 * 1024);
+define('MAX_UPLOAD_BYTES', 10 * 1024 * 1024);
 
 $dsn = sprintf(
     'mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4',
@@ -116,7 +116,7 @@ function save_pdf(array $upload): array
         throw new AppException('Choose a PDF file to submit.');
     }
     if (($upload['size'] ?? 0) < 1 || $upload['size'] > MAX_UPLOAD_BYTES) {
-        throw new AppException('The PDF must be smaller than 5 MB.');
+        throw new AppException('The PDF must be 10 MB or smaller.');
     }
     if (!isset($upload['tmp_name']) || !is_uploaded_file($upload['tmp_name'])) {
         throw new AppException('The uploaded file could not be checked.');
